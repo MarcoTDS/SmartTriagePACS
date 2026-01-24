@@ -19,7 +19,7 @@ class UserModel(Base):
     crm_uf = Column(String(2))
     
     # Chave Estrangeira
-    id_user_type = Column(Integer, ForeignKey("usertypes.id_user_type"))
+    id_user_type = Column(Integer, ForeignKey("usertypes.id_user_type"), nullable=True)
     
     # Relacionamento para acessar os dados do tipo diretamente (opcional, mas útil)
     user_type = relationship("UserTypeModel")
