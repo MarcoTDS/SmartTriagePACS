@@ -1,2 +1,0 @@
-djangorestframework
-django-cors-headers  # Permite que o Svelte (porta 5173) fale com o Django (porta 8000)
