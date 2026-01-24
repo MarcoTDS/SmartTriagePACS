@@ -33,3 +33,18 @@ class StudyResponse(StudyBase):
     study_last_import: datetime
 
     model_config = ConfigDict(from_attributes=True)
+
+# Schema usado pelo DICOM Listener para registrar o estudo via API
+class StudyIngest(StudyBase):
+    study_instance_uid: str
+    study_date: str
+    study_time: str
+    file_path: str # Caminho local onde o listener salvou
+    accession_number: Optional[str] = None
+    study_description: Optional[str] = None
+    patient_id: Optional[str] = None
+    patient_name: Optional[str] = None
+    patient_birth_date: Optional[str] = None
+    patient_sex: Optional[str] = None
+    modality: Optional[str] = None
+    body_part: Optional[str] = None
